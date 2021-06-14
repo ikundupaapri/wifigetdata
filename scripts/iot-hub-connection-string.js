@@ -47,7 +47,7 @@ async function convertIotHubToEventHubsConnectionString(connectionString) {
     const [iotHubName] = HostName.split(".");
 
     if (!iotHubName) {
-        throw new Error(`Unable to extract the IotHub name from the connection string.`);
+        throw new Error('Unable to extract the IotHub name from the connection string.');
     }
 
     // Generate a token to authenticate to the service.
@@ -56,7 +56,7 @@ async function convertIotHubToEventHubsConnectionString(connectionString) {
         `${HostName}/messages/events`,
         SharedAccessKey,
         SharedAccessKeyName,
-        30 // token expires in 5 minutes
+        30 // token expires in 30 minutes
     );
     const connectionOptions = {
         transport: "tls",
